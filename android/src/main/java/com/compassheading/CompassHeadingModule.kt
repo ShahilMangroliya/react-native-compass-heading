@@ -103,7 +103,7 @@ class CompassHeadingModule(reactContext: ReactApplicationContext) :
                 SensorManager.getOrientation(R, orientation)
                 var newAzimuth = calculateHeading(orientation[0])
 
-                Log.d(NAME, "Raw azimuth: $newAzimuth")
+                // Log.d(NAME, "Raw azimuth: $newAzimuth")
 
                 val display = getDisplay()
                 display?.let {
@@ -116,7 +116,7 @@ class CompassHeadingModule(reactContext: ReactApplicationContext) :
                     }
                 }
 
-                Log.d(NAME, "Adjusted azimuth after rotation: $newAzimuth")
+                // Log.d(NAME, "Adjusted azimuth after rotation: $newAzimuth")
 
                 if (abs(mAzimuth - newAzimuth) > mFilter) {
                     mAzimuth = newAzimuth.toInt()
